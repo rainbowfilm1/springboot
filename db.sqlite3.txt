@@ -1,0 +1,89 @@
+show database	
+       show dbs
+       
+Create Database 
+	   use College
+
+Create Collections 	
+   db.createCollection("Student")
+
+Show all Connections
+   show collections
+
+Insert Record in the Collections 
+
+db.Student.insert({
+... name : "jon",
+... age : 20,
+... Year : "TeCS"
+... })
+
+Check record is updated or not 
+	 db.Student.find()
+
+Print Record 	     
+            db.Student.find().pretty()
+             db.Student.find().forEach(printjson)
+
+Insert Multiple Record in the Collections
+
+var Asmi =
+... [
+... {
+... "name" : "Rahul",
+... "age" : 19,
+... "area" : "account"
+... },
+... {
+... "name" : "vimla",
+... "age" : 33,
+... "area" : "HR"
+... },
+... ];
+> db.Student.insert(Asmi);
+
+Equality Criteria 
+	db.Student.find({name : "vimla"}).pretty()
+
+Greater Then 	
+db.Student.find({"age" :{$gt:30}}).pretty()
+
+Less then 	
+db.Student.find({"age" :{$gt:30}}).pretty()
+
+Not Equal to 	
+db.Student.find({"_id" : {$ne:1002}}).pretty()
+
+Greater Then 	
+db.Student.find({"age" :{$gte:30}}).pretty()
+
+Less then 	
+db.Student.find({"age" :{$gte:30}}).pretty()
+
+Update	
+db.Student.update ({"name" : "Rahul"} ,{$set:{"name": "Khan"}})
+
+Assending Order 	
+db.Student.find({},{"age" :20}).sort({"age": 1})
+
+Decending  Order 
+	db.Student.find({},{"age" :20}).sort({"age": -1})
+
+Index Create 
+	db.Student.createIndex({name:1})
+
+Get Inex	
+db.Student.getIndexes()
+
+Drop Index	
+db.Student.dropIndex({name:1})
+db.Student.dropIndexes()
+
+Deleting Data 
+	db.Student.remove({"name" : "Khan"})
+
+Drop Collections	
+ db.Student.drop()
+
+
+
