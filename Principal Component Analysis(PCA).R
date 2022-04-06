@@ -25,3 +25,7 @@ model2_scores<-as.matrix(data_iris)%*%model2
 library(e1071)
 mod1<-naiveBayes(iris[,1:4],iris[,5])
 table(predict(mod1,iris[,1:4]),iris[,5])
+
+
+mod2<-naiveBayes(model2_scores,iris[,5])
+table(predict(mod2,model2_scores),iris[,5])
