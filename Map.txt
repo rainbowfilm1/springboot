@@ -1,0 +1,7 @@
+ACK  :-     nmap -sA -T4 scanme.nmap.org
+SYN  :-	nmap -p 22,113,139 scanme.nmap.org
+FIN  :-     nmap -sF -T4 google.com
+NULL :- 	nmap -sN -p 22 scanme.nmap.org
+XMAS :- 	nmap -sX -T4 scanme.nmap.org
+
+
